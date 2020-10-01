@@ -401,9 +401,9 @@ void Tissue::update_Signal_Dynamic(){
 		cells.at(i)->update_Cell_Center();
 		//Is this necessary?
 	}
-	vector<vector<double>> signals;
-	vector<vector<double>> locX;
-	vector<vector<double>> locY;
+	vector<vector<double> > signals;
+	vector<vector<double> > locX;
+	vector<vector<double> > locY;
 	vector<double> cntX;
 	vector<double> cntY;
 	for(int i = 0; i < num_cells; i++){

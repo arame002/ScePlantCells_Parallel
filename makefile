@@ -6,8 +6,8 @@ CXXFLAGS= -Wall -g -O3
 # Targets needed to bring the executable up to date
 all: program 
 
-program:folder main.o coord.o node.o cell.o cell_div.o tissue.o rand.o Signal_Calculator.o common.o MeshCell.o Mesh.o MeshTissue.o 
-	$(CXX) $(CXXFLAGS) -o program main.o coord.o node.o cell.o cell_div.o tissue.o rand.o Signal_Calculator.o common.o MeshCell.o Mesh.o MeshTissue.o
+program:folder main.o coord.o node.o cell.o cell_div.o tissue.o rand.o Signal_Calculator.o SignalCommon.o SignalCell.o SignalMesh.o SignalTissue.o 
+	$(CXX) $(CXXFLAGS) -o program main.o coord.o node.o cell.o cell_div.o tissue.o rand.o Signal_Calculator.o SignalCommon.o SignalCell.o SignalMesh.o SignalTissue.o
 folder: 
 		mkdir -p ./DataOutput ./Animation
 main.o: main.cpp
@@ -31,17 +31,17 @@ tissue.o: tissue.cpp
 Signal_Calculator.o: Signal_Calculator.cpp
 	$(CXX) $(CXXFLAGS) -c Signal_Calculator.cpp
 
-common.o: common.cpp
-	$(CXX) $(CXXFLAGS) -c common.cpp
+common.o: SignalCommon.cpp
+	$(CXX) $(CXXFLAGS) -c SignalCommon.cpp
 
-MeshCell.o: MeshCell.cpp
-	$(CXX) $(CXXFLAGS) -c MeshCell.cpp
+MeshCell.o: SignalCell.cpp
+	$(CXX) $(CXXFLAGS) -c SignalCell.cpp
 	
-Mesh.o: Mesh.cpp
-	$(CXX) $(CXXFLAGS) -c Mesh.cpp
+Mesh.o: SignalMesh.cpp
+	$(CXX) $(CXXFLAGS) -c SignalMesh.cpp
 
-MeshTissue.o: MeshTissue.cpp
-	$(CXX) $(CXXFLAGS) -c MeshTissue.cpp
+MeshTissue.o: SignalTissue.cpp
+	$(CXX) $(CXXFLAGS) -c SignalTissue.cpp
 
 rand.o: rand.cpp
 	$(CXX) $(CXXFLAGS) -c rand.cpp
